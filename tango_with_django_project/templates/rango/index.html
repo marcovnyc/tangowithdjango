@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New Line -->
+
+<html>
+
+    <head>
+        <title>The Matrix</title>
+    </head>
+
+    <body>
+        <h1>Hello Neo...</h1></br>
+        <img src="https://www.gravatar.com/avatar/4b9a99bc159204b3f0b2fed6f056919d?s=328&d=identicon&r=PG"></br>
+        Hi Neo! <strong>{{ boldmessage }}</strong><br />
+        <img src={% static "images/NeoTheMatrix.jpg" %} alt="Picture of Neo" /> <!--New Line --> </br>
+        <a href="/rango/about/">About the matrix</a><br />
+    </body>
+
+</html>
