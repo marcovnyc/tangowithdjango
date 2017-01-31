@@ -15,4 +15,4 @@ def index(request):
     return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-    return HttpResponse("The Matrix is a fake reality, do you want to take the blue or redpill? <br/><a href='/rango/'>Go back to the portal!</a>")
+    return render(request, 'rango/about.html')
