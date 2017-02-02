@@ -8,10 +8,10 @@ from rango.models import Category, Page
 
 
 def populate():
-    python_cat = add_cat('thematrix')
+    thematrix_cat = add_cat('thematrix')
 
     add_page(cat=thematrix_cat,
-    tile="The Matrix Theory",
+    title="The Matrix Theory",
     url="http://matrix.wikia.com/wiki/The_Matrix")
 
     add_page(cat=thematrix_cat,
@@ -52,7 +52,7 @@ def populate():
             print "- {0} - {1}".format(str(c), str(p))
 
 def add_page(cat, title, url, views=0):
-    p = Page.objecs.get_or_create(category=cat, title=title)[0]
+    p = Page.objects.get_or_create(category=cat, title=title)[0]
     p.url=url
     p.views=views
     p.save()
