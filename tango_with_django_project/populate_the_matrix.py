@@ -9,6 +9,7 @@ from rango.models import Category, Page
 
 def populate():
     thematrix_cat = add_cat('thematrix')
+    likes=21
 
     add_page(cat=thematrix_cat,
     title="The Matrix Theory",
