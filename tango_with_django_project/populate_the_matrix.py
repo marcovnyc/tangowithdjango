@@ -8,8 +8,7 @@ from rango.models import Category, Page
 
 
 def populate():
-    thematrix_cat = add_cat('thematrix')
-    likes=21
+    thematrix_cat = add_cat('thematrix',32,63)
 
     add_page(cat=thematrix_cat,
     title="The Matrix Theory",
@@ -23,7 +22,7 @@ def populate():
     title="Agent Smith",
     url="http://matrix.wikia.com/wiki/Agent_Smith")
 
-    themovies_cat = add_cat("The Movies")
+    themovies_cat = add_cat("The Movies",37,89)
 
     add_page(cat=themovies_cat,
     title="The Cast",
@@ -37,7 +36,7 @@ def populate():
     title="10 Questions about the Matrix Trilogy",
     url="http://www.ifc.com/2015/06/10-questions-we-have-about-matrix-trilogy")
 
-    history_cat = add_cat("The History of the Matrix")
+    history_cat = add_cat("The History of the Matrix",44,128)
 
     add_page(cat=history_cat,
     title="Bullet Time",
@@ -59,8 +58,11 @@ def add_page(cat, title, url, views=0):
     p.save()
     return p
 
-def add_cat(name):
+def add_cat(name, views, likes):
     c = Category.objects.get_or_create(name=name)[0]
+    c.views = views
+    c.likes = likes
+    c.save()
     return c
 
 # Start exectuions here!
